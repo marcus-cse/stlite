@@ -143,6 +143,7 @@ const createWindow = async () => {
         ...(manifest.nodefsMountpoints && {
           NODEFS_MOUNTPOINTS: JSON.stringify(manifest.nodefsMountpoints),
         }),
+          PORTABLE_EXECUTABLE_DIR: process.env.PORTABLE_EXECUTABLE_DIR
       },
     });
     worker.on("message", (value) => {
